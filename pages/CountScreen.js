@@ -1,43 +1,35 @@
-import { useState } from "react";
-import { View, TextInput, FlatList, Text, Button } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
 
-const ListManagerScreen = () => {
-  const [items, setItems] = useState([]);
-  const [input, setInput] = useState("");
-
-  const addItem = () => {
-    if (input.trim() !== "") {
-      setItems([...items, input]);
-      setInput("");
-    }
-  };
-
-  const removeItem = (index) => {
-    setItems(items.filter((_, i) => i !== index));
-  };
+const CountScreen = () => {
+  const [count, setCount] = useState(0); // กำหนดค่า count เริ่มต้น = 0
 
   return (
-    <View style={{ padding: 20 }}>
-      <TextInput
-        style={{ borderWidth: 1, padding: 10, marginBottom: 10 }}
-        placeholder="Enter item"
-        value={input}
-        onChangeText={setInput}
-      />
-      <Button title="Add item" onPress={addItem} />
-
-      <FlatList
-        data={items}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item, index }) => (
-          <View>
-            <Text>{item}</Text>
-            <Button title="Remove" onPress={() => removeItem(index)} />
-          </View>
-        )}
-      />
+    <View style={styles.container}>
+      <Text style={styles.countText}>ค่าปัจจุบัน: {count}</Text>
+      <View style={styles.buttonContainer}>
+        <Button title="increse" onPress={() => setCount(count + 1)} />
+        <Button title="devalue" onPress={() => setCount(count - 1)} />
+      </View>
     </View>
   );
 };
 
-export default ListManagerScreen;
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+  },
+  countText: {
+    fontSize: 24,
+    marginBottom: 20,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    gap: 10,
+  },
+});
+
+export default CountScreen;

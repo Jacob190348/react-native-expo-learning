@@ -2,7 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Homescreen from '../pages/HomeScreen';
 import DetailsScreen from '../pages/DetailsScreen';
 import ProfileScreen from '../pages/ProfileScreen';
-import CountScreen from '../pages/CountScreenScreen';
+import CountScreen from '../pages/CountScreen';
 
 const Stack = createStackNavigator();
 
