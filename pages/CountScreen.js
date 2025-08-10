@@ -9,7 +9,7 @@ const CountScreen = () => {
       <Text style={styles.countText}>ค่าปัจจุบัน: {count}</Text>
       <View style={styles.buttonContainer}>
         <Button title="increse" onPress={() => setCount(count + 1)} />
-        <Button title="devalue" onPress={() => setCount(count - 1)} />
+        <Button title="devalue" onPress={() => setCount(Math.max(0,count - 1))} />
       </View>
     </View>
   );
