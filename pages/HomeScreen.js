@@ -12,6 +12,10 @@ export default function Homescreen({ navigation}) {
       title="Go to Profile"
      onPress={() => navigation.navigate('Profile')}
      />
+    <Button
+      title="Go to Count"
+     onPress={() => navigation.navigate('Count')}
+     />
     </View>
   );
 }
