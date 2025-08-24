@@ -15,11 +15,7 @@ export default function Homescreen({ navigation}) {
     <Button
       title="Go to Count"
      onPress={() => navigation.navigate('Count')}
-     />
-     <Button
-        title="Go to Count"
-        onPress={() => navigation.navigate("Count")}
-      />
+    />
       <Button
         title="Go to Flex"
         onPress={() => navigation.navigate("Flex")}
@@ -27,6 +23,10 @@ export default function Homescreen({ navigation}) {
       <Button
         title="Go to Layout"
         onPress={() => navigation.navigate("Layout")}
+      />
+      <Button
+        title="Go to Login"
+        onPress={() => navigation.navigate("Login")}
       />
     </View>
   );
